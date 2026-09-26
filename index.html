@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bài 8: Thấu Kính - Trò Chơi Lật Thẻ</title>
+  <title>Bài 8: Thấu Kính - Trò Chơi Lật Thẻ (Dark Neon)</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Nunito:wght@700;800;900&display=swap');
 
@@ -14,7 +14,7 @@
     }
 
     body {
-      background-color: #1a1c23;
+      background-color: #050508;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -23,15 +23,16 @@
       user-select: none;
     }
 
-    /* Container Khung Game */
+    /* Khung Game Chính - Phong cách Tối */
     .slide-container {
       width: 950px;
       height: 600px;
-      background-color: #ffffff;
+      background-color: #0d0f17;
       border-radius: 20px;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 0 35px rgba(0, 243, 255, 0.2), 0 15px 35px rgba(0, 0, 0, 0.8);
       position: relative;
       overflow: hidden;
+      border: 1px solid rgba(0, 243, 255, 0.2);
     }
 
     .slide {
@@ -50,86 +51,85 @@
       display: flex;
     }
 
-    /* ================= SẢNH CHÍNH (SLIDE 1) ================= */
+    /* ================= SẢNH CHÍNH (SLIDE 1 - DARK NEON) ================= */
     #slide1 {
-      background: radial-gradient(circle at center, #fffbeb 0%, #fef3c7 55%, #fde68a 100%);
+      background: radial-gradient(circle at center, #161b2e 0%, #0a0c14 70%, #05060a 100%);
       position: relative;
     }
 
-    /* Họa tiết nền sảnh */
+    /* Họa tiết Lưới Neon phía sau */
     #slide1::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       background-image: 
-        radial-gradient(#f59e0b 0.8px, transparent 0.8px),
-        radial-gradient(#f59e0b 0.8px, #fef3c7 0.8px);
-      background-size: 28px 28px;
-      background-position: 0 0, 14px 14px;
-      opacity: 0.18;
+        linear-gradient(to right, rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+      background-size: 30px 30px;
       pointer-events: none;
     }
 
-    /* Vòng tròn quang học chìm giữa sảnh */
+    /* Vòng tròn Quang học Neon xoay nhẹ */
     .bg-optics-ring {
       position: absolute;
-      width: 480px;
-      height: 480px;
-      border: 2px dashed rgba(217, 119, 6, 0.2);
+      width: 500px;
+      height: 500px;
+      border: 2px dashed rgba(255, 0, 127, 0.25);
       border-radius: 50%;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       pointer-events: none;
+      box-shadow: inset 0 0 50px rgba(0, 243, 255, 0.05);
     }
 
-    /* Bảng tiêu đề chính */
+    /* Bảng Tiêu Đề Neon */
     .lobby-header {
       z-index: 5;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(13, 15, 23, 0.75);
       padding: 25px 50px;
       border-radius: 28px;
-      border: 3px solid #f59e0b;
-      box-shadow: 0 12px 30px rgba(217, 119, 6, 0.2), inset 0 0 15px rgba(254, 243, 199, 0.5);
-      backdrop-filter: blur(8px);
+      border: 2px solid #00f3ff;
+      box-shadow: 0 0 25px rgba(0, 243, 255, 0.3), inset 0 0 15px rgba(0, 243, 255, 0.15);
+      backdrop-filter: blur(10px);
       margin-bottom: 35px;
     }
 
     .title-main-lobby {
       font-size: 48px;
       font-weight: 900;
-      color: #7c2d12;
-      letter-spacing: 1px;
+      color: #ffffff;
+      letter-spacing: 2px;
       margin-bottom: 4px;
       text-transform: uppercase;
-      text-shadow: 2px 2px 0px #fde68a;
+      text-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff;
     }
 
     .title-sub-lobby {
       font-size: 42px;
       font-weight: 900;
-      color: #d97706;
+      color: #ff007f;
       line-height: 1.2;
       text-transform: uppercase;
-      text-shadow: 1px 1px 0px #ffffff;
+      text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
     }
 
-    /* Nút Play ở sảnh */
+    /* Nút Play Neon */
     .play-btn {
       width: 175px;
       height: 95px;
-      background: linear-gradient(135deg, #84cc16 0%, #65a30d 100%);
+      background: linear-gradient(135deg, #00f3ff 0%, #0066ff 100%);
       border-radius: 32px;
-      border: 4px solid #ffffff;
+      border: 2px solid #ffffff;
       display: flex;
       justify-content: center;
       align-items: center;
       cursor: pointer;
       transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      box-shadow: 0 10px 25px rgba(101, 163, 13, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+      box-shadow: 0 0 20px rgba(0, 243, 255, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.8);
       outline: none;
       z-index: 5;
-      animation: btnPulse 2s infinite;
+      animation: btnPulseNeon 2s infinite;
     }
 
     .play-icon {
@@ -139,80 +139,82 @@
       border-bottom: 22px solid transparent;
       border-left: 36px solid #ffffff;
       margin-left: 8px;
-      filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.2));
+      filter: drop-shadow(0 0 8px rgba(255,255,255,0.9));
     }
 
     .play-btn:hover {
       transform: scale(1.15) translateY(-3px);
-      background: linear-gradient(135deg, #a3e635 0%, #65a30d 100%);
-      box-shadow: 0 15px 30px rgba(101, 163, 13, 0.6);
+      background: linear-gradient(135deg, #ff007f 0%, #7928ca 100%);
+      box-shadow: 0 0 35px rgba(255, 0, 127, 0.8);
     }
 
-    @keyframes btnPulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
+    @keyframes btnPulseNeon {
+      0%, 100% { box-shadow: 0 0 20px rgba(0, 243, 255, 0.6); }
+      50% { box-shadow: 0 0 35px rgba(0, 243, 255, 0.9), 0 0 10px #ff007f; }
     }
 
-    /* Đồ họa trang trí sảnh */
+    /* Đồ họa trang trí Neon dạng đường nét phát sáng */
     .deco-item {
       position: absolute;
       pointer-events: none;
       z-index: 2;
     }
 
-    /* Thấu kính trái */
+    /* Thấu kính trái Neon */
     .deco-lens-left {
       left: 35px;
       top: 110px;
       width: 160px;
       height: 220px;
-      opacity: 0.9;
+      filter: drop-shadow(0 0 8px #00f3ff);
     }
 
-    /* Kính phóng đại góc trái dưới */
+    /* Kính phóng đại góc trái dưới Neon */
     .deco-magnifier {
       left: 45px;
       bottom: 35px;
       width: 150px;
       height: 150px;
+      filter: drop-shadow(0 0 10px #ff007f);
     }
 
-    /* Bộ thẻ góc phải dưới */
+    /* Bộ thẻ góc phải dưới Neon */
     .deco-cards {
       right: 45px;
       bottom: 35px;
       width: 180px;
       height: 170px;
+      filter: drop-shadow(0 0 10px #39ff14);
     }
 
-    /* Thấu kính phải */
+    /* Thấu kính phải Neon */
     .deco-lens-right {
       right: 40px;
       top: 100px;
       width: 150px;
       height: 200px;
-      opacity: 0.9;
+      filter: drop-shadow(0 0 8px #bf00ff);
     }
 
-    /* Ngôi sao trang trí */
-    .deco-star1 { top: 40px; left: 80px; width: 35px; }
-    .deco-star2 { top: 50px; right: 90px; width: 45px; }
-    .deco-star3 { bottom: 180px; left: 240px; width: 25px; }
-    .deco-star4 { bottom: 160px; right: 230px; width: 30px; }
+    /* Ngôi sao neon */
+    .deco-star1 { top: 40px; left: 80px; width: 35px; filter: drop-shadow(0 0 6px #00f3ff); }
+    .deco-star2 { top: 50px; right: 90px; width: 45px; filter: drop-shadow(0 0 8px #ff007f); }
+    .deco-star3 { bottom: 180px; left: 240px; width: 25px; filter: drop-shadow(0 0 6px #39ff14); }
+    .deco-star4 { bottom: 160px; right: 230px; width: 30px; filter: drop-shadow(0 0 6px #bf00ff); }
 
-    /* ================= LƯỚI THẺ (SLIDE 2) ================= */
+    /* ================= LƯỚI THẺ (SLIDE 2 - DARK NEON) ================= */
     #slide2 {
-      background-color: #e5c396;
-      background-image: repeating-linear-gradient(0deg, transparent, transparent 49px, rgba(0,0,0,0.05) 50px),
-                        repeating-linear-gradient(90deg, #dfb988, #dfb988 100px, #d6ae7b 100px, #d6ae7b 200px);
+      background: radial-gradient(circle at center, #121624 0%, #080a10 100%);
     }
 
     .grid-title {
       font-size: 28px;
       font-weight: 900;
-      color: #333;
+      color: #00f3ff;
       margin-bottom: 25px;
-      text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 0 0 10px rgba(0, 243, 255, 0.7);
     }
 
     .card-grid {
@@ -262,45 +264,45 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
     }
 
     .card-front {
       font-size: 38px;
       font-weight: 900;
-      border: 3px solid rgba(255, 255, 255, 0.4);
+      border: 2px solid rgba(255, 255, 255, 0.2);
     }
 
     .card-front::after {
       content: '';
       position: absolute;
       top: 6px; left: 6px; right: 6px; bottom: 6px;
-      border: 2px solid rgba(255, 255, 255, 0.35);
+      border: 1px dashed rgba(255, 255, 255, 0.3);
       border-radius: 8px;
       pointer-events: none;
     }
 
-    .card-red { background-color: #c93b2b; color: #ffffff; }
-    .card-blue { background-color: #2b7bb9; color: #ffffff; }
-    .card-green { background-color: #278547; color: #ffffff; }
-    .card-yellow { background-color: #f3c623; color: #333333; }
-    .card-yellow::after { border-color: rgba(0, 0, 0, 0.2) !important; }
-    .card-orange { background-color: #e67e22; color: #ffffff; }
-    .card-purple { background-color: #7b3294; color: #ffffff; }
-    .card-pink { background-color: #f06292; color: #ffffff; }
-    .card-white { background-color: #f5f5f5; color: #333333; border-color: #d1d5db; }
-    .card-white::after { border-color: rgba(0, 0, 0, 0.15) !important; }
-    .card-dark { background-color: #343a40; color: #ffffff; }
-    .card-brown { background-color: #6f4e37; color: #ffffff; }
+    /* Các màu Neon cho Thẻ */
+    .card-red { background: #2a080c; border-color: #ff2a4b; color: #ff2a4b; box-shadow: inset 0 0 15px rgba(255, 42, 75, 0.3), 0 0 10px rgba(255, 42, 75, 0.4); }
+    .card-blue { background: #081a2a; border-color: #00f3ff; color: #00f3ff; box-shadow: inset 0 0 15px rgba(0, 243, 255, 0.3), 0 0 10px rgba(0, 243, 255, 0.4); }
+    .card-green { background: #082a12; border-color: #39ff14; color: #39ff14; box-shadow: inset 0 0 15px rgba(57, 255, 20, 0.3), 0 0 10px rgba(57, 255, 20, 0.4); }
+    .card-yellow { background: #2a2508; border-color: #ffe600; color: #ffe600; box-shadow: inset 0 0 15px rgba(255, 230, 0, 0.3), 0 0 10px rgba(255, 230, 0, 0.4); }
+    .card-orange { background: #2a1508; border-color: #ff7700; color: #ff7700; box-shadow: inset 0 0 15px rgba(255, 119, 0, 0.3), 0 0 10px rgba(255, 119, 0, 0.4); }
+    .card-purple { background: #20082a; border-color: #bf00ff; color: #bf00ff; box-shadow: inset 0 0 15px rgba(191, 0, 255, 0.3), 0 0 10px rgba(191, 0, 255, 0.4); }
+    .card-pink { background: #2a081a; border-color: #ff007f; color: #ff007f; box-shadow: inset 0 0 15px rgba(255, 0, 127, 0.3), 0 0 10px rgba(255, 0, 127, 0.4); }
+    .card-white { background: #1a1e28; border-color: #ffffff; color: #ffffff; box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.2), 0 0 10px rgba(255, 255, 255, 0.3); }
+    .card-dark { background: #11131a; border-color: #7000ff; color: #b377ff; box-shadow: inset 0 0 15px rgba(112, 0, 255, 0.3), 0 0 10px rgba(112, 0, 255, 0.4); }
+    .card-brown { background: #221408; border-color: #ffaa44; color: #ffaa44; box-shadow: inset 0 0 15px rgba(255, 170, 68, 0.3), 0 0 10px rgba(255, 170, 68, 0.4); }
 
     .card-back {
-      background-color: #10b981;
-      color: white;
+      background: #052e16;
+      color: #39ff14;
       font-size: 18px;
       font-weight: 900;
       transform: rotateY(180deg);
       padding: 5px;
-      border: 3px solid rgba(255, 255, 255, 0.4);
+      border: 2px solid #39ff14;
+      box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
     }
 
     .back-btn {
@@ -308,26 +310,27 @@
       padding: 10px 24px;
       font-size: 16px;
       font-weight: bold;
-      border: none;
-      background-color: #ffffff;
-      color: #374151;
+      border: 1px solid #00f3ff;
+      background-color: rgba(0, 243, 255, 0.1);
+      color: #00f3ff;
       border-radius: 8px;
       cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: background-color 0.2s;
+      transition: all 0.2s;
     }
 
     .back-btn:hover {
-      background-color: #f3f4f6;
+      background-color: #00f3ff;
+      color: #0d0f17;
+      box-shadow: 0 0 15px #00f3ff;
     }
 
-    /* Modal Hộp thoại Câu Hỏi */
+    /* Modal Hộp thoại Câu Hỏi Neon */
     .modal-question {
       display: none;
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background-color: rgba(0, 0, 0, 0.88);
+      background-color: rgba(5, 6, 10, 0.92);
       color: white;
       flex-direction: column;
       justify-content: center;
@@ -341,9 +344,10 @@
     .q-title {
       font-size: 20px;
       margin-bottom: 20px;
-      color: #facc15;
+      color: #ffe600;
       max-width: 85%;
       line-height: 1.4;
+      text-shadow: 0 0 8px rgba(255, 230, 0, 0.5);
     }
 
     .options-grid {
@@ -356,9 +360,9 @@
 
     .opt-btn {
       padding: 12px 18px;
-      background-color: #374151;
-      color: white;
-      border: 2px solid #4b5563;
+      background-color: #161b26;
+      color: #ffffff;
+      border: 1px solid #00f3ff;
       border-radius: 8px;
       font-size: 15px;
       cursor: pointer;
@@ -367,28 +371,37 @@
     }
 
     .opt-btn:hover {
-      background-color: #4b5563;
-      border-color: #facc15;
+      background-color: #00f3ff;
+      color: #000000;
+      font-weight: bold;
+      box-shadow: 0 0 12px #00f3ff;
     }
 
     .close-q-btn {
       padding: 8px 20px;
-      background-color: #ef4444;
-      color: white;
-      border: none;
+      background-color: transparent;
+      color: #ff2a4b;
+      border: 1px solid #ff2a4b;
       border-radius: 6px;
       font-weight: bold;
       cursor: pointer;
+      transition: all 0.2s;
     }
 
-    /* Modal Banner Thông Báo */
+    .close-q-btn:hover {
+      background-color: #ff2a4b;
+      color: #ffffff;
+      box-shadow: 0 0 10px #ff2a4b;
+    }
+
+    /* Modal Banner Thông Báo Neon */
     .modal-status {
       display: none;
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(3px);
+      background-color: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
       z-index: 200;
       justify-content: center;
       align-items: center;
@@ -404,21 +417,32 @@
       justify-content: center;
       align-items: center;
       gap: 20px;
-      border-radius: 16px;
+      border-radius: 20px;
       color: #ffffff;
       font-size: 46px;
       font-weight: 900;
       letter-spacing: 1px;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
       animation: bannerPop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      border: 4px solid rgba(255, 255, 255, 0.3);
-      text-shadow: 2px 3px 5px rgba(0,0,0,0.2);
+      text-shadow: 0 0 15px currentColor;
     }
 
-    .status-banner.success { background: linear-gradient(135deg, #70c700 0%, #569e00 100%); }
-    .status-banner.error { background: linear-gradient(135deg, #ff4d4d 0%, #d92626 100%); }
+    .status-banner.success { 
+      background: #072710;
+      border: 3px solid #39ff14;
+      color: #39ff14;
+      box-shadow: 0 0 30px rgba(57, 255, 20, 0.6);
+    }
+    .status-banner.error { 
+      background: #2a060a;
+      border: 3px solid #ff0055;
+      color: #ff0055;
+      box-shadow: 0 0 30px rgba(255, 0, 85, 0.6);
+    }
     .status-banner.info {
-      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+      background: #081b2a;
+      border: 3px solid #00f3ff;
+      color: #00f3ff;
+      box-shadow: 0 0 30px rgba(0, 243, 255, 0.6);
       font-size: 38px;
     }
 
@@ -434,7 +458,7 @@
     .status-icon-box svg {
       width: 100%;
       height: 100%;
-      filter: drop-shadow(2px 3px 3px rgba(0,0,0,0.25));
+      filter: drop-shadow(0 0 8px currentColor);
     }
 
     @keyframes bannerPop {
@@ -447,7 +471,7 @@
 
   <div class="slide-container">
     
-    <!-- Slide 1: Sảnh chính -->
+    <!-- Slide 1: Sảnh chính Dark Neon -->
     <div class="slide active" id="slide1">
       
       <div class="bg-optics-ring"></div>
@@ -463,48 +487,48 @@
         <div class="play-icon"></div>
       </button>
 
-      <!-- Đồ họa trang trí thấu kính bên trái -->
+      <!-- Đồ họa thấu kính bên trái Neon -->
       <svg class="deco-item deco-lens-left" viewBox="0 0 100 150">
-        <path d="M0 40 L50 75 L100 40" stroke="#f59e0b" stroke-width="3" stroke-dasharray="4 4" fill="none"/>
-        <path d="M0 110 L50 75 L100 110" stroke="#f59e0b" stroke-width="3" stroke-dasharray="4 4" fill="none"/>
-        <path d="M50 10 Q35 75 50 140 Q65 75 50 10 Z" fill="rgba(59, 130, 246, 0.35)" stroke="#2563eb" stroke-width="4"/>
+        <path d="M0 40 L50 75 L100 40" stroke="#00f3ff" stroke-width="3" stroke-dasharray="4 4" fill="none"/>
+        <path d="M0 110 L50 75 L100 110" stroke="#00f3ff" stroke-width="3" stroke-dasharray="4 4" fill="none"/>
+        <path d="M50 10 Q35 75 50 140 Q65 75 50 10 Z" fill="rgba(0, 243, 255, 0.2)" stroke="#00f3ff" stroke-width="4"/>
       </svg>
 
-      <!-- Đồ họa kính phóng đại bên trái dưới -->
+      <!-- Đồ họa kính phóng đại bên trái dưới Neon -->
       <svg class="deco-item deco-magnifier" viewBox="0 0 100 100">
-        <circle cx="42" cy="42" r="30" fill="rgba(255,255,255,0.8)" stroke="#d97706" stroke-width="7"/>
-        <line x1="64" y1="64" x2="90" y2="90" stroke="#b45309" stroke-width="12" stroke-linecap="round"/>
-        <path d="M25 35 Q35 20 50 25" stroke="#93c5fd" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <circle cx="42" cy="42" r="30" fill="rgba(255,0,127,0.15)" stroke="#ff007f" stroke-width="6"/>
+        <line x1="64" y1="64" x2="90" y2="90" stroke="#ff007f" stroke-width="10" stroke-linecap="round"/>
+        <path d="M25 35 Q35 20 50 25" stroke="#ffffff" stroke-width="3" stroke-linecap="round" fill="none"/>
       </svg>
 
-      <!-- Đồ họa thấu kính bên phải -->
+      <!-- Đồ họa thấu kính bên phải Neon -->
       <svg class="deco-item deco-lens-right" viewBox="0 0 100 150">
-        <line x1="10" y1="75" x2="90" y2="75" stroke="#d97706" stroke-width="3" stroke-dasharray="5 5"/>
-        <circle cx="50" cy="75" r="5" fill="#d97706"/>
-        <path d="M35 15 L65 15 Q52 75 65 135 L35 135 Q48 75 35 15 Z" fill="rgba(168, 85, 247, 0.3)" stroke="#7e22ce" stroke-width="4"/>
+        <line x1="10" y1="75" x2="90" y2="75" stroke="#bf00ff" stroke-width="3" stroke-dasharray="5 5"/>
+        <circle cx="50" cy="75" r="5" fill="#bf00ff"/>
+        <path d="M35 15 L65 15 Q52 75 65 135 L35 135 Q48 75 35 15 Z" fill="rgba(191, 0, 255, 0.2)" stroke="#bf00ff" stroke-width="4"/>
       </svg>
 
-      <!-- Đồ họa các thẻ câu hỏi góc phải dưới -->
+      <!-- Đồ họa các thẻ câu hỏi góc phải dưới Neon -->
       <svg class="deco-item deco-cards" viewBox="0 0 120 120">
         <g transform="rotate(-20 50 60)">
-          <rect x="20" y="20" width="55" height="75" rx="8" fill="#fbbf24" stroke="#b45309" stroke-width="4"/>
-          <rect x="25" y="25" width="45" height="65" rx="5" fill="none" stroke="#ffffff" stroke-width="2"/>
+          <rect x="20" y="20" width="55" height="75" rx="8" fill="#122b10" stroke="#39ff14" stroke-width="3"/>
+          <rect x="25" y="25" width="45" height="65" rx="5" fill="none" stroke="#39ff14" stroke-width="1.5" stroke-dasharray="3 3"/>
         </g>
         <g transform="rotate(15 65 55)">
-          <rect x="40" y="15" width="55" height="75" rx="8" fill="#ec4899" stroke="#9d174d" stroke-width="4"/>
-          <rect x="45" y="20" width="45" height="65" rx="5" fill="none" stroke="#ffffff" stroke-width="2"/>
+          <rect x="40" y="15" width="55" height="75" rx="8" fill="#2b0a1a" stroke="#ff007f" stroke-width="3"/>
+          <rect x="45" y="20" width="45" height="65" rx="5" fill="none" stroke="#ff007f" stroke-width="1.5" stroke-dasharray="3 3"/>
         </g>
       </svg>
 
       <!-- Ngôi sao lấp lánh trang trí -->
-      <svg class="deco-item deco-star1" viewBox="0 0 40 40"><path d="M20 0 L23 17 L40 20 L23 23 L20 40 L17 23 L0 20 L17 17 Z" fill="#f59e0b"/></svg>
-      <svg class="deco-item deco-star2" viewBox="0 0 40 40"><path d="M20 0 L23 17 L40 20 L23 23 L20 40 L17 23 L0 20 L17 17 Z" fill="#fbbf24"/></svg>
-      <svg class="deco-item deco-star3" viewBox="0 0 40 40"><path d="M20 0 L23 17 L40 20 L23 23 L20 40 L17 23 L0 20 L17 17 Z" fill="#f59e0b"/></svg>
-      <svg class="deco-item deco-star4" viewBox="0 0 40 40"><path d="M20 0 L23 17 L40 20 L23 23 L20 40 L17 23 L0 20 L17 17 Z" fill="#3b82f6"/></svg>
+      <svg class="deco-item deco-star1" viewBox="0 0 40 40"><path d="M20 0 L23 17 L40 20 L23 23 L20 40 L17 23 L0 20 L17 17 Z" fill="#00f3ff"/></svg>
+      <svg class="deco-item deco-star2" viewBox="0 0 40 40"><path d="M20 0 L23 17 L40 20 L23 23 L20 40 L17 23 L0 20 L17 17 Z" fill="#ff007f"/></svg>
+      <svg class="deco-item deco-star3" viewBox="0 0 40 40"><path d="M20 0 L23 17 L40 20 L23 23 L20 40 L17 23 L0 20 L17 17 Z" fill="#39ff14"/></svg>
+      <svg class="deco-item deco-star4" viewBox="0 0 40 40"><path d="M20 0 L23 17 L40 20 L23 23 L20 40 L17 23 L0 20 L17 17 Z" fill="#bf00ff"/></svg>
 
     </div>
 
-    <!-- Slide 2: Lưới thẻ câu hỏi -->
+    <!-- Slide 2: Lưới thẻ câu hỏi Dark Neon -->
     <div class="slide" id="slide2">
       <h3 class="grid-title">CHỌN THẺ CÂU HỎI</h3>
       <div class="card-grid">
@@ -751,11 +775,11 @@
       if (isCorrect) {
         banner.className = 'status-banner success';
         text.innerText = 'Trả lời đúng';
-        icon.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+        icon.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
       } else {
         banner.className = 'status-banner error';
         text.innerText = 'Trả lời sai';
-        icon.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
+        icon.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
       }
 
       document.getElementById('modalStatus').classList.add('active');
@@ -768,7 +792,7 @@
 
       banner.className = 'status-banner info';
       text.innerText = 'Bạn đã trả lời rồi!';
-      icon.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>`;
+      icon.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>`;
 
       document.getElementById('modalStatus').classList.add('active');
     }
